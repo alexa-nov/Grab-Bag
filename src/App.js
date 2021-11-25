@@ -1,5 +1,6 @@
 import React from 'react';
- 
+import './App.css';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -18,21 +19,24 @@ class App extends React.Component {
   
   render() {
     const { items, loaded } = this.state;
-        if (!loaded) return <div>
-            <h1> Items loading... </h1> </div> ;
+    if (!loaded) return <div>
+      <h1> Items loading... </h1> 
+    </div> ;
 
-    return (
-      <div className = "Grab Bag">
-            <h1> Grab Bag </h1>  {
-                items.map((item, index) => ( 
-                <ol key = { index } >
-                    <img src={item.image.standard} alt=""/>
-                  </ol>
-                ))
-            }
-         </div>
-      );
+   return (
+    <div className='Device-grid'>
+        {items.map((item, index) => {
+          return(
+          <div key = { index }>
+            <img 
+            src={item.image.standard} 
+            alt=""
+            />
+          </div>
+            );
+          })}
+          </div>
+    )
+  }
 }
-}
- 
 export default App;
