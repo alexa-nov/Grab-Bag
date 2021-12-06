@@ -1,37 +1,57 @@
 import React from 'react';
 import './App.css';
 import Bag from './Bag';
-import Devices from './Devices.js'
-import { useState } from 'react';
+import DeviceContainer from './DeviceContainer'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       items: [],
+      bagImages: [],
+      bagText: [],
       loaded: false,
-      offset: 0
+      offset: 0,
+      image: 0
     };
   }
  
   componentDidMount() {
     this.getDevices();
+    let bagImages = JSON.parse(localStorage.getItem('bagImages'));
+    let bagText = JSON.parse(localStorage.getItem('bagText'));
+    if (bagImages == null) {
+      bagImages = [];
+    }
+    if (bagText == null) {
+      bagText = [];
+    }
+    this.setState({ bagImages:bagImages });
+    this.setState({ bagText:bagText });
+    this.clearBag();
   }
 
+  clearBag() {
+    this.setState({ bag:[] });
+    localStorage.clear();
+  }
 
   getDevices() {
-    const baseUrl = 'https://www.ifixit.com/api/2.0/wikis/CATEGORY';
-    const url = baseUrl + '?offset=' + this.state.offset + '&limit=12';
+    const baseurl = 'https://www.ifixit.com/api/2.0/wikis/CATEGORY';
+    const url = baseurl + '?offset=' + this.state.offset + '&limit=12';
     fetch(url)
       .then(response => response.json())
       .then(data => this.setState({items: data, loaded: true}));
+    //this.setState({numItems: this.state.items.length})
+   // console.log(this.state.numItems);
   }
 
   nextPage(){
-    this.setState({ offset: this.state.offset + 12 });
-    console.log(updatedOffset);
-    console.log(this.state.offset);
-    this.getDevices();
+    this.setState({ 
+      offset: this.state.offset + 12 
+    }, () =>{
+      this.getDevices();
+    });
   }
 
   prevPage(){
@@ -41,24 +61,27 @@ class App extends React.Component {
     }
     this.setState({
       offset: updatedOffset
+    }, () =>{
+      this.getDevices();
     });
-    console.log(this.state.offset);
-    this.getDevices();
   }
   
   render() {
   return (
-    <div>
 
-    <Devices
+    <div className = "topBar"> 
+    <div className = "mainBlock">
+    <DeviceContainer
       stateVars={this.state}
       prev={() => this.prevPage()}
       next={() => this.nextPage()}
       />
     <Bag
-      
+      stateVars={this.state}
     />
     </div>
+    </div>
+    
   )
 }
 }
