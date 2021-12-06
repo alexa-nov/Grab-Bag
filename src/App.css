@@ -1,1 +1,20 @@
+.mainBlock {
+    position: absolute;
+    width: 1300px;
+    height: 700px;
+    left: 70px;
+    top: 60px;
+    background: white;
+}
 
+.topBar {
+    height: 40px;
+    background: #F84C44;
+    font-size: 30pt;
+	  font-weight: 700;
+	  text-align: center;
+	  font-family: 'Public Sans', sans-serif;
+    color: white;
+    padding-top: 10px;
+	  padding-bottom: 10px;
+}
