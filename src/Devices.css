@@ -1,7 +1,6 @@
 .Device-panel {
   height: 700px;
   width: 876px;
-  background: #E5E5E5;
   float: left;
 }
 
@@ -12,14 +11,17 @@ button {
 	background: #f84d44;
 	color: white;
 	font-size: 16px;
+	font-family: 'Public Sans', sans-serif;
 	font-weight: 700;
 	border-radius: 28px;
-	margin: 20px;
+	margin-top: 15px;
+  	margin-left: 30px;
+	margin-right: 500px;
 	padding: 4px;
 }
 
 button:hover {
-	background-color:#ff7873;
+	background-color:black;
 }
 button:active {
 	position:relative;
@@ -27,8 +29,8 @@ button:active {
 }
 
 button:disabled {
-	background-color: #E5E5E5;
-	color: #E5E5E5;
+	background-color: #D3D3D3;
+	color: white;
 }
 
 .Device-grid {
@@ -43,16 +45,18 @@ button:disabled {
 }
 
 .Device-container { 
-  margin-top: 20px;
-  margin-left: 20px;
-	width: 178px;
+  	margin-top: 20px;
+  	margin-left: 20px;
+  	width: 178px;
 	height: 133px;
 	box-shadow: 3px 5px 2px -1px rgba(0,0,0,0.20);
+	border-radius: 10px 10px 0px 0px;
 }
 
 .Device-image { 
 	width: 178px;
 	height: 133px;
+	border-radius: 10px 10px 0px 0px;
 }
 
 .Device-text { 
@@ -62,8 +66,11 @@ button:disabled {
 	margin-left: 20px;
   	margin-bottom: 5px;
 	font-size: 10pt;
-	font-weight: bold;
+	font-weight: 700;
 	text-align: center;
+	font-family: 'Public Sans', sans-serif;
 	width: 178px;
 	box-shadow: 3px 3px 2px -1px rgba(0,0,0,0.20);
+	border-radius: 0px 0px 10px 10px;
+	color: black;
 }
