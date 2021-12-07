@@ -12,8 +12,8 @@ class Bag extends React.Component {
     this.props.stateVars.bagImages.push(image);
     this.props.stateVars.bagText.push(text);
     this.forceUpdate();
-    localStorage.setItem('bagImages', JSON.stringify(this.props.stateVars.bag));
-    localStorage.setItem('bagText', JSON.stringify(this.props.stateVars.bag));
+    localStorage.setItem('bagImages', JSON.stringify(this.props.stateVars.bagImages));
+    localStorage.setItem('bagText', JSON.stringify(this.props.stateVars.bagText));
   }
 
 
@@ -57,3 +57,5 @@ class Bag extends React.Component {
 )}};
 
 export default Bag;
+
+
