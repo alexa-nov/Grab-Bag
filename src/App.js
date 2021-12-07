@@ -28,7 +28,7 @@ class App extends React.Component {
     }
     this.setState({ bagImages:bagImages });
     this.setState({ bagText:bagText });
-    this.clearBag();
+    //this.clearBag();
   }
 
   clearBag() {
