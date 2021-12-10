@@ -15,14 +15,14 @@ class Devices extends React.Component {
   render() {
     return(
       <div>
-      <div className = 'Device-container'>
-      <img className='Device-image'
+      <div className = 'device-container'>
+      <img className='device-image'
           src ={this.props.image} 
           alt=""
           onDragStart={this.onDragStart}
       />
       </div>
-      <div className='Device-text'>
+      <div className='device-text'>
           {this.props.deviceText}
       </div>
       </div>
@@ -30,3 +30,4 @@ class Devices extends React.Component {
   }
 }
 export default Devices;
+
