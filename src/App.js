@@ -28,11 +28,11 @@ class App extends React.Component {
     }
     this.setState({ bagImages:bagImages });
     this.setState({ bagText:bagText });
-    //this.clearBag();
   }
 
   clearBag() {
-    this.setState({ bag:[] });
+    this.setState({ bagImages:[] });
+    this.setState({ bagText:[] });
     localStorage.clear();
   }
 
@@ -42,8 +42,6 @@ class App extends React.Component {
     fetch(url)
       .then(response => response.json())
       .then(data => this.setState({items: data, loaded: true}));
-    //this.setState({numItems: this.state.items.length})
-   // console.log(this.state.numItems);
   }
 
   nextPage(){
@@ -68,9 +66,8 @@ class App extends React.Component {
   
   render() {
   return (
-
-    <div className = "topBar"> 
-    <div className = "mainBlock">
+    <div className = "top-bar"> 
+    <div className = "main-block">
     <DeviceContainer
       stateVars={this.state}
       prev={() => this.prevPage()}
@@ -78,6 +75,7 @@ class App extends React.Component {
       />
     <Bag
       stateVars={this.state}
+      clear={() => this.clearBag()}
     />
     </div>
     </div>
