@@ -1,3 +1,12 @@
+.bagBlock {
+  position: absolute;
+  width: 403px;
+  height: 900px;
+  left: 900px;
+  top: 0px;
+  background: white;
+}
+
 .bag {
   margin-top: 20px;
   overflow:scroll;
@@ -30,15 +39,39 @@
 }
 
 .bag-text{
-width: px;
-height: px;
-left: 80px;
-top: 18px;
-display: flex;
-font-family: 'Public Sans', sans-serif;
-font-style: normal;
-font-weight: 600;
-font-size: 13px;
-line-height: 23px;
-color: black;
+	width: px;
+	height: px;
+	left: 80px;
+	top: 18px;
+	display: flex;
+	font-family: 'Public Sans', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: 23px;
+  color: black;
+}
+
+button {
+	width: 64px;
+	height: 32px;
+	border: none;
+	background: #f84d44;
+	color: white;
+	font-size: 16px;
+	font-family: 'Public Sans', sans-serif;
+	font-weight: 700;
+	border-radius: 28px;
+	margin-top: 15px;
+  margin-left: 30px;
+	margin-right: 500px;
+	padding: 4px;
+}
+
+button:hover {
+	background-color:black;
+}
+button:active {
+	position:relative;
+	top:1px;
 }
