@@ -1,4 +1,4 @@
-.Device-panel {
+.device-panel {
   height: 700px;
   width: 876px;
   float: left;
@@ -33,18 +33,12 @@ button:disabled {
 	color: white;
 }
 
-.Device-grid {
+.device-grid {
   display: flex;   
   flex-wrap: wrap;
 }
 
-.Divide {
-  height: 700px;
-  width: 70px;
-  background: #F84C44;
-}
-
-.Device-container { 
+.device-container { 
   	margin-top: 20px;
   	margin-left: 20px;
   	width: 178px;
@@ -53,13 +47,13 @@ button:disabled {
 	border-radius: 10px 10px 0px 0px;
 }
 
-.Device-image { 
+.device-image { 
 	width: 178px;
 	height: 133px;
 	border-radius: 10px 10px 0px 0px;
 }
 
-.Device-text { 
+.device-text { 
 	background: #cccccc;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -74,3 +68,15 @@ button:disabled {
 	border-radius: 0px 0px 10px 10px;
 	color: black;
 }
+
+.header-text{
+	display: inline, center;
+	font-family: 'Noto Serif', serif;
+	margin-right: 50px;
+	font-style: normal;
+	margin-top: -25px;
+	font-weight: 900;
+	font-size: 23px;
+	line-height: 20px;
+	color: black;
+  }
