@@ -30,11 +30,12 @@ class Bag extends React.Component {
 
   render() {
     return(
-      <div className = "bag" onDrop={this.onDrop} onDragOver={this.onDragOver}>
+      <div className = "bagBlock">
       <button
         onClick = {this.props.clear}>
         clear
       </button>
+      <div className = "bag" onDrop={this.onDrop} onDragOver={this.onDragOver}>
         {this.props.stateVars.bagImages.map((item, index) => {
         return (
         <div>
@@ -57,6 +58,7 @@ class Bag extends React.Component {
         </div>
         )})
         }
+      </div>
       </div>
 )}};
 
