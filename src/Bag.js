@@ -16,7 +16,6 @@ class Bag extends React.Component {
     localStorage.setItem('bagText', JSON.stringify(this.props.stateVars.bagText));
   }
 
-
   onDrop(e) {
     e.preventDefault();
     const img = e.dataTransfer.getData("image");
@@ -30,15 +29,17 @@ class Bag extends React.Component {
 
   render() {
     return(
-      <div className = "bagBlock">
+      <div className = "bag-block">
       <button
         onClick = {this.props.clear}>
         clear
       </button>
+      <div className = "my-devices-text">My Gear Bag</div>
       <div className = "bag" onDrop={this.onDrop} onDragOver={this.onDragOver}>
+
         {this.props.stateVars.bagImages.map((item, index) => {
         return (
-        <div>
+        <div className = 'image-container'>
           <div key={index}>
             <img
               className='image-bag'
@@ -46,7 +47,7 @@ class Bag extends React.Component {
               src ={item} 
             />
             </div>
-            </div>
+        </div>
         )})
         }
         {this.props.stateVars.bagText.map((item, index) => {
@@ -63,5 +64,3 @@ class Bag extends React.Component {
 )}};
 
 export default Bag;
-
-
