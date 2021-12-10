@@ -4,9 +4,6 @@ import Devices from './Devices'
 
 class DeviceContainer extends React.Component {
   render() {
-  //  if (!this.props.stateVars.loaded) return <div>
-   //   <h1> Items loading... </h1> 
-   // </div> ;
     return(
       <div>
         <button 
@@ -18,8 +15,9 @@ class DeviceContainer extends React.Component {
         onClick = {this.props.next}> 
         next 
       </button>
-    <div className='Device-panel'>
-    <div className='Device-grid'>
+    <div className='device-panel'>
+    <div className='header-text'>All Devices</div>
+    <div className='device-grid'>
       {this.props.stateVars.items.map((item, index) => {
         return(
           <div key = { index }>
